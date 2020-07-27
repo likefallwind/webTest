@@ -70,7 +70,7 @@
 								<ul class="nav navbar-nav navbar-right">
 									<li class="active"><a class="smooth_scroll" href="#slider">王之凝视</a></li>
 									<li ><a class="smooth_scroll" href="#services">联系我</a></li>
-									<li><a class="smooth_scroll" href="#aboutus">要啥</a></li>
+									<li><a class="smooth_scroll" href="#aboutus">世界名画合成</a></li>
 									<li><a class="smooth_scroll" href="#workhin">都没有</a></li>
 								 </ul>
 							</nav>
@@ -167,10 +167,14 @@
 
 			<div class="col-md-7 col-sm-6">
 				<div class="about-content">
-					<h5>后面的别看了</h5>
+					<h5>世界名画合成</h5>
 					<h2>没时间改了 <br> 我得继续工作了 <br> 洗洗睡吧</h2>
 					<p class="color">Creative & Professional Digital Agency.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore.</p>
+					<form method="POST" enctype="multipart/form-data">
+						{% csrf_token %}
+						<input type = "file" name="img">
+						<button type = "submit">上传</button>
+					</form>
 				</div>
 				<div class="about-boxs">
 

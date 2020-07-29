@@ -167,42 +167,37 @@
 
 			<div class="col-md-7 col-sm-6">
 				<div class="about-content">
-					<h5>世界名画合成</h5>
-					<h2>没时间改了 <br> 我得继续工作了 <br> 洗洗睡吧</h2>
-					<p class="color">Creative & Professional Digital Agency.</p>
+					<h1>世界名画合成</h1>
+					<h2>想要创造世界级名画么 <br>  <br> 来试试吧</h2>
+					<p class="color">请上传你的照片（不要太大哦）</p>
 					<form method="POST" action = "getAndChangeImg/" enctype="multipart/form-data">
 						{% csrf_token %}
-						<input type = "file" name="img">
-						<input type = "text" name = "imgName">
-						<button type = "submit">上传</button>
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">图片名</label>
+						    <input type="text" class="form-control" placeholder="Text input" name = "imgName">
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputFile">选择图片</label>
+						    <input type = "file" name="img">
+						    <p class="help-block">选择想要变换的图片</p>
+						  </div>
+						  <select class="form-control" name = "picStyle" onchange = "showOriginalImage()">
+							  <option value = "starry_night">starry_night</option>
+							  <option value = "feathers">feathers</option>
+							  <option value = "the_scream">the_scream</option>
+							  <option value = "the_wave">the_wave</option>
+							  <option value = "la_muse">la_muse</option>
+							</select>
+						
+
+						<button type="submit" class="btn btn-default">生成！</button>
 					</form>
-				</div>
-				<div class="about-boxs">
-
-					<div class="about-box">
-						<span class="ti-briefcase"></span>
-						<h3>289</h3>
-						<p>Job Completed</p>
-					</div>
-
-					<div class="about-box">
-						<span class="ti-pencil-alt"></span>
-						<h3>163</h3>
-						<p>Ongoing Jobs</p>
-					</div>
-
-					<div class="about-box">
-						<span class="ti-cup"></span>
-						<h3>023</h3>
-						<p>Achivements</p>
-					</div>
-
 				</div>
 			</div>
 		   
 			<div class="col-md-5 col-sm-6">
-				<div class="about-img">
-					<img src="{% static 'assets/img/about/slider4.jpg' %}" alt="">
+				<div class="about-img" >
+					<img src="{% static 'assets/img/greatStyle/starry_night.jpg' %}" alt="" name = "imageStyle" >
 				</div>
 			</div>
 
@@ -302,7 +297,23 @@
 </footer>
 <!-- Footer area ends -->
 
+<script type="text/javascript">
 
+function showOriginalImage()
+{
+	var imageName = document.getElementsByName("picStyle")[0]
+	imageName = "assets/img/greatStyle/" + imageName.value + '.jpg'
+	imageName = {% get_static_prefix %} + imageName
+	console.log(imageName)
+	//document.getElementsByName("imageStyle").src = '{% static imageName %}'
+	var element = document.getElementsByName("imageStyle")[0]
+	console.log(element.src)
+	element.src = imageName
+	console.log(element.src)
+	//document.getElementsByName("imageStyle").src = "C:\\code\\webTest\\wangyiboWeb\\wangyiboBest\\static\\assets\\img\\greatStyle\\la_muse.jpg"
+
+}
+</script>
 
 
 <!-- Latest jQuery -->

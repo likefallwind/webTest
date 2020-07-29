@@ -1,6 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
 
-<p>{{ img.imageName }}</p>
-<p>Original Image</p>
-<img src="{{ originalUrl }}" />
-<p>Change Image</p>
-<img src = "{{ changeUrl }}" />
+<!-- meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"       content="width=device-width, initial-scale=1.0">
+<meta name="description"    content="Korprate - One Page App Landing Page">
+<meta name="keywords"       content="Apps, Software, technology, landing page, business, responsive, onepage, corporate, clean">
+
+<!-- Site title -->
+<title>Home</title>
+
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">
+
+
+<!-- Plugin Css -->
+<link href="{% static 'assets/css/plugin.css' %}" rel="stylesheet">
+
+<!-- Site css -->
+<link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+<!-- Site css -->
+<link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet">
+</head>
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-6 col-sm-6">
+				<div class="about-img">
+					<h2>原图</h2>
+					<img src="{{ originalUrl }}" />
+				</div>
+			</div>
+		   
+			<div class="col-md-6 col-sm-6">
+				<div class="about-img" >
+					<h2>合成的图</h2>
+					<img src = "{{ changeUrl }}" />
+				</div>
+			</div>
+
+		</div>            
+	</div>
+
+
+
+<!-- Latest jQuery -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+
+<!-- Plugin js -->
+<script src="{% static 'assets/js/plugin.js' %}"></script>
+
+<script src="{% static 'assets/js/jquery.mixitup.js' %}"></script>
+
+<!-- Main js-->
+<script src="{% static 'assets/js/main_script.js' %}"></script>
+
+
+</body>
+
+</html>

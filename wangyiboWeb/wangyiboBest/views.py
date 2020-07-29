@@ -27,7 +27,9 @@ def uploadImg(request):
 
 def changeImgStyle(imgStyle, imgSrc, imgDst):
     #embed()
-    net = cv2.dnn.readNetFromTorch('models/starry_night.t7')
+    #net = cv2.dnn.readNetFromTorch('models/starry_night.t7')
+    print(imgStyle)
+    net = cv2.dnn.readNetFromTorch(imgStyle)
     net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
     #embed()
     imgDst = os.path.join(settings.BASE_DIR, imgDst).replace('\\', '/')
@@ -50,6 +52,7 @@ def changeImgStyle(imgStyle, imgSrc, imgDst):
     #cv2.imencode('.jpg', out * 255)[1].tofile(imgDst) 
     return
 
+
 def  getAndChangeImg(request):
     if request.method == 'POST':
         new_img = ImageModel(
@@ -57,10 +60,12 @@ def  getAndChangeImg(request):
             imageName = request.POST['imgName']
         )
         new_img.save()
+        styleName = request.POST['picStyle']
+        styleName = 'models/' + styleName + '.t7'
         imgDst = 'media/changeImg/' + request.POST['imgName'] + '.jpg'
         allDst = os.path.join(settings.BASE_DIR, imgDst).replace('\\', '/')
         #embed()
-        changeImgStyle(0, new_img.imageFile.url[1:], imgDst)
+        changeImgStyle(styleName, new_img.imageFile.url[1:], imgDst)
         tmpFile = File(open(allDst, 'rb'))
         #embed()
         new_img.changeImageFile.save(request.POST['imgName'], tmpFile)

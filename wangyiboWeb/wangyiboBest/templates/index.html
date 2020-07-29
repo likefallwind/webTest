@@ -170,9 +170,10 @@
 					<h5>世界名画合成</h5>
 					<h2>没时间改了 <br> 我得继续工作了 <br> 洗洗睡吧</h2>
 					<p class="color">Creative & Professional Digital Agency.</p>
-					<form method="POST" enctype="multipart/form-data">
+					<form method="POST" action = "getAndChangeImg/" enctype="multipart/form-data">
 						{% csrf_token %}
 						<input type = "file" name="img">
+						<input type = "text" name = "imgName">
 						<button type = "submit">上传</button>
 					</form>
 				</div>

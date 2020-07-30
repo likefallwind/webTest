@@ -36,6 +36,7 @@ def changeImgStyle(imgStyle, imgSrc, imgDst):
     imgSrc = os.path.join(settings.BASE_DIR, imgSrc).replace('\\', '/')
     print(imgSrc)
     print(imgDst)
+    img_resize(imgSrc)
 
     image = cv2.imread(imgSrc)
     (h, w) = image.shape[:2]
@@ -88,3 +89,18 @@ def showImg(request):
     for i in imgs:
         print(i.imageFile.url)
     return render(request, 'showing.html', content)
+
+def img_resize(imageSrc, width_new = 1280, height_new = 720):
+    img = cv2.imread(imageSrc)
+    height, width = img.shape[0], img.shape[1]
+    if width / height > width_new / height_new:
+        newHeight = int(height * width_new / width)
+        newWidth = width_new
+    else:
+        newHeight = height_new
+        newWidth = int(width * height_new / height)
+    img_new = cv2.resize(img, (newWidth, newHeight))
+    print(img_new.shape)
+    cv2.imwrite(imageSrc, img_new)
+    return 
+

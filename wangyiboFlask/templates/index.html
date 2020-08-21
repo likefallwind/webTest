@@ -1,0 +1,360 @@
+﻿
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+
+<!-- meta -->
+<meta charset="utf8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"       content="width=device-width, initial-scale=1.0">
+<meta name="description"    content="Korprate - One Page App Landing Page">
+<meta name="keywords"       content="Apps, Software, technology, landing page, business, responsive, onepage, corporate, clean">
+
+<!-- Site title -->
+<title>Home</title>
+
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="../static/assets/img/favicon.png">
+
+
+<!-- Plugin Css -->
+<link href="../static/assets/css/plugin.css" rel="stylesheet">
+
+<!-- Site css -->
+<link href="../static/assets/css/style.css" rel="stylesheet">
+
+<!-- Site css -->
+<link href="../static/assets/css/responsive.css" rel="stylesheet">
+
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+
+
+
+<div id="preloader"></div>
+
+
+
+<!-- Navigation area starts -->
+<div class="menu-area navbar-fixed-top">
+	<div class="container">
+		<div class="row">
+
+			<!-- Navigation starts -->
+			<div class="col-md-12">
+				<div class="mainmenu">
+					<div class="navbar navbar-nobg">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="">
+								<img src="../static/assets/img/logo.png" alt="">
+							</a>
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+
+						<div class="navbar-collapse collapse">
+							<nav>
+								<ul class="nav navbar-nav navbar-right">
+									<li class="active"><a class="smooth_scroll" href="#slider">王之凝视</a></li>
+									<li ><a class="smooth_scroll" href="#services">联系我</a></li>
+									<li><a class="smooth_scroll" href="#aboutus">世界名画合成</a></li>
+									<li><a class="smooth_scroll" href="#workhin">都没有</a></li>
+								 </ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Navigation ends -->
+
+		</div>
+	</div>
+</div>
+<!-- Navigation area ends -->
+
+
+
+<!-- Slider area starts -->
+<section id="slider" class="slider-area">
+	<div class="container">
+
+		<div class="intro-text clearfix">
+			<h2>王一博<br> 王一博！！！ <br> 太帅了</h2>
+			<p>我需要一万个粉丝让我变红</p>
+			<div class="clearfix video">
+				<a class="popup-youtube" href="https://www.bilibili.com/video/BV1Ae411x7no/">
+					<span class="ti-control-play"></span>
+				</a>
+				<div class="text">
+					<p>Watch</p>
+					<h6>昔日物理课视频</h6>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+<!-- Slider area ends -->
+
+
+
+<!-- Hero boxes starts -->
+<section id="services" class="hero-box-area section-big">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="section-title">
+					<h2>我最近在做什么</h2>
+					<p>沉迷于学习领域，希望通过研究与实践帮助大家尽快掌握学习知识</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+
+			<!-- Hero box -->
+			<div class="col-md-4 col-sm-6">
+				<div class="hero-box box-one">
+					<span class="ti-layout-media-center-alt"></span>
+					<h3>电子邮箱</h3>
+					<p>likefallwind@163.com</p>
+				</div>
+			</div>
+
+			<!-- Hero box -->
+			<div class="col-md-4 col-sm-6">
+				<div class="hero-box box-two">
+					<span class="ti-ruler-pencil"></span>
+					<h3>微信公众号</h3>
+					<p>我们一起进行刻意练习的实践，一步步让我们生活更加完美</p>
+				</div>
+			</div>
+
+			<!-- Hero box -->
+			<div class="col-md-4 col-sm-6">
+				<div class="hero-box box-three">
+					<span class="ti-video-camera"></span>
+					<h3>个人微信</h3>
+					<p>likefallwind2</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+<!-- Hero boxes ends -->
+
+
+
+<!-- About us area starts -->
+<section id="aboutus" class="aboutus-area section-small">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-7 col-sm-6">
+				<div class="about-content">
+					<h1>世界名画合成</h1>
+					<h2>想要创造世界级名画么 <br>  <br> 来试试吧</h2>
+					<p class="color">请上传你的照片</p>
+					<form method="POST" action = "getAndChangeImg/" enctype="multipart/form-data">
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">图片名</label>
+						    <input type="text" class="form-control" placeholder="Text input" name = "imgName">
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputFile">选择图片</label>
+						    <input type = "file" name="img">
+						    <p class="help-block">选择想要变换的图片</p>
+						  </div>
+						  <select class="form-control" name = "picStyle" onchange = "showOriginalImage()">
+							  <option value = "starry_night">starry_night</option>
+							  <option value = "feathers">feathers</option>
+							  <option value = "the_scream">the_scream</option>
+							  <option value = "the_wave">the_wave</option>
+							  <option value = "la_muse">la_muse</option>
+							  <option value = "composition_vii">composition_vii</option>
+							  <option value = "candy">candy</option>
+							  <option value = "mosaic">mosaic</option>
+							  <option value = "udnie">udnie</option>
+							</select>
+						
+
+						<button type="submit" class="btn btn-default">生成！</button>
+					</form>
+				</div>
+			</div>
+		   
+			<div class="col-md-5 col-sm-6">
+				<div class="about-img" >
+					<img src="../static/assets/img/greatStyle/starry_night.jpg" alt="" name = "imageStyle" >
+				</div>
+			</div>
+
+		</div>            
+	</div>
+</section>
+<!-- About us area ends -->
+
+
+
+<!-- working area starts -->
+<div id="workhin" class="working-process section-big">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-12 text-center">
+					<h3>藏头诗写作</h3>
+					<form method="POST" enctype="multipart/form-data">
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">你的名字</label>
+						    <input type="text" class="form-control" placeholder="Text input" name = "imgName">
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputFile">最终诗句</label>
+						    <label for="exampleInputFile" id = "poemResult"></label>
+						  </div>
+						<button type="submit" class="btn btn-default">生成！</button>
+					</form>
+				<div class="section-title">
+					<h2>问我为啥不把后面删掉？</h2>
+					<p>说来话长啊</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="working-boxs">
+
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="working-box">
+					   <span class="ti-clipboard"></span>
+					   <h3>模板不易</h3>
+					   <div class="hexagon"> 01 </div>
+					   <p>找一个合适的模板太难了</p>
+				   </div>
+				</div>
+
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="working-box">
+					   <span class="ti-alarm-clock"></span>
+					   <h3>留一线</h3>
+					   <div class="hexagon"> 02 </div>
+					   <p>做人做事留一线</p>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="working-box">
+					   <span class="ti-ruler-alt-2"></span>
+					   <h3>努力开发</h3>
+					   <div class="hexagon"> 03 </div>
+					   <p>啪啪啪啪啪啪开发中</p>
+				   </div>
+				</div>
+
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="working-box">
+					   <span class="ti-package"></span>
+					   <h3>Testing Bugs</h3>
+					   <div class="hexagon"> 04 </div>
+					   <p>有bug也不会修的</p>
+				   </div>
+				</div>
+
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
+<!-- working area ends -->
+
+
+
+
+
+<!-- Footer area starts -->
+<footer id="footer" class="footer-area section-big">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="footer-title">
+					<h2>Korprate</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="footer-social">
+					<a href=""><span class="ti-facebook"></span></a>
+					<a href=""><span class="ti-twitter"></span></a>
+					<a href=""><span class="ti-dribbble"></span></a>
+					<a href=""><span class="ti-linkedin"></span></a>
+				</div>
+				<p>本网站就是抄袭，不用洗! &copy; 2019.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- Footer area ends -->
+
+<script type="text/javascript">
+
+function showOriginalImage()
+{
+	var imageName = document.getElementsByName("picStyle")[0]
+	imageName = "../static/assets/img/greatStyle/" + imageName.value + '.jpg'
+	console.log(imageName)
+	var element = document.getElementsByName("imageStyle")[0]
+	//console.log(element.src)
+	element.src = imageName
+	//console.log(element.src)
+	//document.getElementsByName("imageStyle").src = "C:\\code\\webTest\\wangyiboWeb\\wangyiboBest\\static\\assets\\img\\greatStyle\\la_muse.jpg"
+}
+
+function loadPoem()
+{
+	xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function()
+	{
+		if( this.readyState == 4 && this.status == 200 )
+		{
+			document.getElementById("poemResult").innerHTML = JSON.parse(this.responseText).testWord;
+		}
+	}
+	xhttp.open("GET", "/tryFlask/", true);
+	xhttp.send();
+}
+
+</script>
+
+
+<!-- Latest jQuery -->
+<script src="../static/assets/js/jquery.min.js"></script>
+
+<!-- Plugin js -->
+<script src="../static/assets/js/plugin.js"></script>
+
+<script src="../static/assets/js/jquery.mixitup.js"></script>
+
+<!-- Main js-->
+<script src="../static/assets/js/main_script.js"></script>
+
+
+</body>
+
+</html>

@@ -107,7 +107,7 @@ def config_sample(args=''):
             help='continue from the outputs in the given directory')
 
     logging_args.add_argument('--data_dir', type=str,
-            default='./data/poem',
+            default='./poetmaster/data/poem',
             help='data file path')
 
     logging_args.add_argument('--best_model', type=str,

@@ -9,6 +9,9 @@ from datetime import timedelta
 import numpy as np
 import json
 from poetmaster.write_poem import WritePoem,start_model
+import tensorflow.compat.v1 as tf
+from IPython import embed
+
 
 app = Flask(__name__, template_folder = '.')
 
@@ -88,6 +91,7 @@ def write_poem():
     if 'style' in  params:
         poem_style = int(params['style'])
 
+    #embed()
     # return 'hello'
     if  start_with:
          if poem_style == 3:

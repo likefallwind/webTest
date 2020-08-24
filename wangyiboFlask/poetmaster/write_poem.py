@@ -3,11 +3,13 @@ import os, sys,time
 import logging
 import math
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from .char_rnn_model import CharRNNLM,SampleType
 from .config_poem import config_sample
 from .word2vec_helper import Word2Vec
 from .rhyme_helper import RhymeWords
+
+from IPython import embed
 
 
 class  WritePoem():
@@ -20,7 +22,7 @@ class  WritePoem():
 
         with open(os.path.join(self.args.model_dir, 'result.json'), 'r') as f:
             result = json.load(f)
-
+        #embed()
         params = result['params']
         best_model = result['best_model']
         best_valid_ppl = result['best_valid_ppl']
@@ -202,6 +204,7 @@ class  WritePoem():
         return WritePoem.assemble(start)
 
 def start_model():
+    tf.disable_v2_behavior()
     now = int(time.time())
     args = config_sample('--model_dir poetmaster/output_poem --length 16 --seed {}'.format(now))
     writer = WritePoem(args)

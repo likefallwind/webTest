@@ -71,7 +71,7 @@
 									<li class="active"><a class="smooth_scroll" href="#slider">王之凝视</a></li>
 									<li ><a class="smooth_scroll" href="#services">联系我</a></li>
 									<li><a class="smooth_scroll" href="#aboutus">世界名画合成</a></li>
-									<li><a class="smooth_scroll" href="#workhin">都没有</a></li>
+									<li><a class="smooth_scroll" href="#workhin">根据姓名写诗</a></li>
 								 </ul>
 							</nav>
 						</div>
@@ -221,18 +221,14 @@
 					<form method="POST" enctype="multipart/form-data">
 						  <div class="form-group">
 						    <label for="exampleInputEmail1">你的名字</label>
-						    <input type="text" class="form-control" placeholder="Text input" name = "imgName">
+						    <input type="text" class="form-control" placeholder="Text input" id = "poemName">
 						  </div>
 						  <div class="form-group">
-						    <label for="exampleInputFile">最终诗句</label>
+						    <label for="exampleInputFile">最终诗句</label><br/>
 						    <label for="exampleInputFile" id = "poemResult"></label>
 						  </div>
-						<button type="submit" class="btn btn-default">生成！</button>
+						<button type="button" class="btn btn-default" onclick = "loadPoem()">生成！</button>
 					</form>
-				<div class="section-title">
-					<h2>问我为啥不把后面删掉？</h2>
-					<p>说来话长啊</p>
-				</div>
 			</div>
 		</div>
 
@@ -333,10 +329,15 @@ function loadPoem()
 	{
 		if( this.readyState == 4 && this.status == 200 )
 		{
-			document.getElementById("poemResult").innerHTML = JSON.parse(this.responseText).testWord;
+			document.getElementById("poemResult").innerHTML = JSON.parse(this.responseText).data;
 		}
 	}
-	xhttp.open("GET", "/tryFlask/", true);
+	var wantName = document.getElementById("poemName").value;
+
+	console.log(wantName);
+	var finalAddress = "/poem?style=3&start=" + wantName;
+	console.log(finalAddress);
+	xhttp.open("GET", finalAddress, true);
 	xhttp.send();
 }
 

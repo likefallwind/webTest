@@ -1,5 +1,5 @@
 import numpy as np
-from gensim.models import word2vec
+import word2vec
 
 class Word2Vec():
     def __init__(self,file_path):

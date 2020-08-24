@@ -3,9 +3,10 @@ import time
 from enum import Enum
 import heapq
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from .rhyme_helper import RhymeWords
 
+tf.disable_v2_behavior()
 logging.getLogger('tensorflow').setLevel(logging.WARNING)
 SampleType = Enum('SampleType',('max_prob', 'weighted_sample', 'rhyme','select_given'))
 

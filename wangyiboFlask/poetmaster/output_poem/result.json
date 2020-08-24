@@ -1,5 +1,5 @@
 {
-  "best_model": "output_poem/best_model/model-16312",
+  "best_model": "poetmaster/output_poem/best_model/model-16312",
   "best_valid_ppl": 21.98419189453125,
   "latest_model": "output_poem/save_model/model-20390",
   "params": {

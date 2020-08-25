@@ -205,6 +205,7 @@ class  WritePoem():
 
 def start_model():
     tf.disable_v2_behavior()
+    tf.reset_default_graph()
     now = int(time.time())
     args = config_sample('--model_dir poetmaster/output_poem --length 16 --seed {}'.format(now))
     writer = WritePoem(args)

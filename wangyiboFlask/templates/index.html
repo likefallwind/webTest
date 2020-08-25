@@ -329,13 +329,15 @@ function loadPoem()
 	{
 		if( this.readyState == 4 && this.status == 200 )
 		{
-			document.getElementById("poemResult").innerHTML = JSON.parse(this.responseText).data;
+			var resultStr = this.responseText;
+			resultStr = resultStr.replace(/。/g, "。<br/>");
+			document.getElementById("poemResult").innerHTML = resultStr;
 		}
 	}
 	var wantName = document.getElementById("poemName").value;
 
 	console.log(wantName);
-	var finalAddress = "/poem?style=3&start=" + wantName;
+	var finalAddress = "/writePoem?start_words=" + wantName;
 	console.log(finalAddress);
 	xhttp.open("GET", finalAddress, true);
 	xhttp.send();

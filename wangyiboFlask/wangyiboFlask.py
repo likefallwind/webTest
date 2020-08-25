@@ -11,6 +11,7 @@ import json
 from poetmaster.write_poem import WritePoem,start_model
 import tensorflow.compat.v1 as tf
 from IPython import embed
+from writePoem.main import userTest
 
 
 app = Flask(__name__, template_folder = '.')
@@ -109,6 +110,13 @@ def write_poem():
         return writer.rhyme_verse()
 
     return 'hello,what do you want? {}'.format(sytle_help)
+
+@app.route('/writePoem')
+def writePoemNew(name = "王一博"):
+    params = request.args
+    start_words = params['start_words']
+    stringName = userTest(start_words = start_words)
+    return stringName
 
 if __name__ == '__main__':
     app.run(debug=True)
